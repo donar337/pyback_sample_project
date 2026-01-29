@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "order-processing"
+version = "0.1.0"
+description = "Order processing service with async consumer"
+authors = ["You"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+fastapi = "^0.110.0"
+uvicorn = "^0.27.0"
+
+sqlalchemy = "^2.0.25"
+asyncpg = "^0.29.0"
+alembic = "^1.13.1"
+
+aio-pika = "^9.4.0"
+
+pydantic = "^2.6.0"
+pydantic-settings = "^2.2.1"
+
+prometheus-client = "^0.20.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+pytest-asyncio = "^0.23.5"
+pytest-cov = "^4.1.0"
+httpx = "^0.26.0"
+factory-boy = "^3.3.0"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = "--cov=app --cov=consumer --cov-report=term-missing"
