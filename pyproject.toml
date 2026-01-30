@@ -25,9 +25,13 @@ prometheus-client = "^0.20.0"
 pytest = "^8.0.0"
 pytest-asyncio = "^0.23.5"
 pytest-cov = "^4.1.0"
+pytest-mock = "^3.12.0"
 httpx = "^0.26.0"
 factory-boy = "^3.3.0"
+aiosqlite = "^0.19.0"
+faker = "^24.0.0"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-addopts = "--cov=app --cov=consumer --cov-report=term-missing"
+testpaths = ["tests"]
+addopts = "--cov=app --cov=consumer --cov=shared --cov-report=term-missing --cov-report=html --cov-fail-under=90"
